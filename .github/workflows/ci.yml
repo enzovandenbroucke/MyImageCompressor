@@ -1,0 +1,23 @@
+name: Build and test
+on: [push, pull_request]
+jobs:
+  codec:
+    strategy:
+      matrix:
+        ocaml: ["4.14", "5.3"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: ${{ matrix.ocaml }}
+      - run: opam install dune
+      - run: opam exec -- dune build
+      - run: opam exec -- dune runtest
+      - run: opam exec -- dune exec bin/main.exe -- --help
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt
+      - run: python scripts/make_demo.py
+      - run: python scripts/test_tooling.py
