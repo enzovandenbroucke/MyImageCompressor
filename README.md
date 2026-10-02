@@ -13,7 +13,7 @@ Direct transform formulas and automated regression tests validate the implementa
 
 ## Visual example
 
-Original photograph and reconstructions at qualities 10, 50 and 90:
+Original photograph and reconstructions at qualities 10, 50 and 90 (scale 1-100, higher quality = less compression) :
 
 ![Original lion photograph and three reconstructions](docs/photo-0809.png)
 
