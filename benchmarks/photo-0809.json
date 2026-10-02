@@ -1,0 +1,16 @@
+{
+  "source": "0809.png",
+  "source_sha256": "a0b094da02bcaeabea1976fb939c87366d437bdda1a796fbc3f4700fb5e7bbed",
+  "ppm_sha256": "9415545b90cca69427280dc9061fc8c699582c32ad8bbf546ff3fefddc009428",
+  "width": 2040,
+  "height": 1356,
+  "crop": [
+    760,
+    300,
+    1080,
+    620
+  ],
+  "processing": "Original-resolution RGB input, one encode/decode per quality; no warmup or repeated benchmark",
+  "display": "Overview resized with Lanczos; detail enlarged with nearest-neighbor; metrics use full original image",
+  "note": "Visual example only; no runtime measurements in this CSV"
+}

@@ -1,0 +1,22 @@
+{
+  "historical_source": "final/FFT.ml",
+  "sha256": "db7e7ae0e5a739ad46ef7c618079f4e25206c75874e7284dd3092ffe7161b4bd",
+  "preserved": [
+    "recursive radix-2 FFT",
+    "FFT-based DCT/IDCT",
+    "RGB/YCbCr coefficients",
+    "4:2:0 chroma averaging",
+    "quantization constants/scaling",
+    "fixed Huffman tables",
+    "zigzag orientation"
+  ],
+  "new_portability_work": [
+    "packed bits",
+    "custom file format and reader",
+    "edge padding",
+    "CLI",
+    "regression tests",
+    "benchmarks",
+    "Python conversion and illustrations"
+  ]
+}

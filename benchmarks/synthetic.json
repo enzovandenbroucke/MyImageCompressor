@@ -1,0 +1,25 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+  "logical_cpu_count": 8,
+  "build": "OCaml 4.14.0 Windows x64 bytecode; compiler default optimization",
+  "executable_sha256": "c0e4aaa0ddc4abd418f60999bd65aa7dfb231226fa8d864466ade93cabd8eefb",
+  "qualities": [
+    10,
+    50,
+    90
+  ],
+  "repeats": 1,
+  "warmup_runs": 1,
+  "timing": "median per image/quality; codec only; parsing and disk I/O excluded",
+  "mb_definition": "1000000 bytes of original uncompressed 8-bit RGB raster",
+  "label": "Original deterministic synthetic stress image; one measured run after warmup",
+  "inputs": [
+    {
+      "name": "synthetic.ppm",
+      "sha256": "f627e36158654808e3d2d3f585fa56f06e99016cbf8f0f1d755dbe1a9b91a04c"
+    }
+  ],
+  "created_utc": "2026-10-02T14:13:57.674768+00:00"
+}

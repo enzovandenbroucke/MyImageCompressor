@@ -1,0 +1,13 @@
+{
+  "conversion": "Pillow RGB, no resizing/cropping/color-profile conversion",
+  "images": [
+    {
+      "source_name": "0801.png",
+      "output_name": "0801.ppm",
+      "width": 2040,
+      "height": 1356,
+      "source_sha256": "ab5cf6a1cac2d1c2d0792dbd274fd2e53e42118ab6537771a825fd87aa28a60c",
+      "ppm_sha256": "a3fe7f0e5efe0faecb1188860213e6ae6c72182b3b7601bb6ab4807656fa2abb"
+    }
+  ]
+}

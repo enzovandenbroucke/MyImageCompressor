@@ -1,0 +1,3 @@
+(library
+ (name jpeg_like)
+ (wrapped false))

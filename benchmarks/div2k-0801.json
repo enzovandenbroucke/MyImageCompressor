@@ -1,0 +1,26 @@
+{
+  "label": "DIV2K validation 0801 only, original dimensions; local execution check",
+  "created_utc": "2026-10-02T14:15:28.024343+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 140 Stepping 1, GenuineIntel",
+  "logical_cpu_count": 8,
+  "build": "OCaml 4.14.0 Windows x64 bytecode; compiler default optimization",
+  "executable_sha256": "c0e4aaa0ddc4abd418f60999bd65aa7dfb231226fa8d864466ade93cabd8eefb",
+  "qualities": [
+    10,
+    50,
+    90
+  ],
+  "repeats": 1,
+  "warmup_runs": 1,
+  "timing": "median per image/quality; codec only; parsing and disk I/O excluded",
+  "mb_definition": "1000000 bytes of original uncompressed 8-bit RGB raster",
+  "inputs": [
+    {
+      "name": "0801.ppm",
+      "sha256": "a3fe7f0e5efe0faecb1188860213e6ae6c72182b3b7601bb6ab4807656fa2abb"
+    }
+  ],
+  "total_runner_wall_s": 298.476816499955
+}
