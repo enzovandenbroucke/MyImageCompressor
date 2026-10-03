@@ -13,7 +13,7 @@ Direct transform formulas and automated regression tests validate the implementa
 
 ## Visual example
 
-Original photograph and reconstructions at qualities 10, 50 and 90 (scale 1-100, higher quality = less compression) :
+Original photograph and reconstructions at qualities 10, 50 and 90:
 
 ![Original lion photograph and three reconstructions](docs/photo-0809.png)
 
@@ -25,6 +25,36 @@ The image is `0809.png` from [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/).
 Compression uses the full original resolution; resizing and enlargement are only
 for display. The bpp and PSNR labels refer to the whole image.
 See [image attribution](docs/image-attribution.md).
+
+## Benchmark results
+
+All **100 DIV2K validation images**, at their original resolution, were tested
+at six quality settings: **600 encode/decode measurements**.
+
+![Compression quality and runtime over the full DIV2K validation set](docs/div2k-summary.png)
+
+| Quality | File bits/pixel | Compression ratio | RGB PSNR (dB) | OJPG / PNG size |
+| ---: | ---: | ---: | ---: | ---: |
+| 10 | 0.30 | 81.0× | 27.0 | 2.4% |
+| 30 | 0.59 | 40.4× | 30.8 | 4.9% |
+| 50 | 0.81 | 29.5× | 32.3 | 6.6% |
+| 75 | 1.23 | 19.6× | 34.4 | 9.9% |
+| 90 | 2.10 | 11.5× | 37.3 | 17.0% |
+| 100 | 6.09 | 3.9× | 42.8 | 49.1% |
+
+Values are **medians across images**. File size includes the container header;
+compression ratios compare against uncompressed 24-bit RGB, rather than PNG.
+The last column is the median of `100 × OJPG bytes / original PNG bytes`:
+lower is smaller. The original PNGs are lossless; OJPG is lossy.
+At quality 75, the median ratio is **19.6×** with **34.4 dB** PSNR. From quality
+90 to 100, the median file size grows roughly **2.9×** for a **5.5 dB** PSNR gain.
+
+Median encoding time ranges from **1.79 to 1.94 s/MB**, and decoding from
+**3.67 to 3.79 s/MB**. These are OCaml 4.14.0 **bytecode** measurements on
+Windows 11, with one measured pass and no warmup. The plotted spread describes
+differences between images, not timing uncertainty across repeated runs.
+See the [raw results](benchmarks/div2k-100.csv),
+[run metadata](benchmarks/div2k-100.json) and [methodology](docs/benchmarks.md).
 
 ## Build and use
 
@@ -46,11 +76,7 @@ PNG conversion and alternative build instructions are in the
 The custom `.ojpg` format is inspired by JPEG but is not JPEG/JFIF compatible.
 Decode it to PPM to view the result.
 
-## Evaluation and implementation
-
-Benchmark tools measure bits per pixel, compression ratio, RGB PSNR and
-encoding/decoding time per MB. The [benchmark guide](docs/benchmarks.md)
-describes the commands and measurement definitions.
+## Implementation
 
 The main modules are [`dct.ml`](src/dct.ml) for the transforms,
 [`codec.ml`](src/codec.ml) for the image pipeline,
